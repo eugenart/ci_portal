@@ -31,10 +31,14 @@ Route::get('/mission', function () {
     return view('mission.index');
 });
 
-Route::get('/user/show', function (){
+Route::get('/user/show', function () {
     return view('user.show');
 });
 
-Route::get('/group', function (){
+Route::get('/group', function () {
     return view('group.index');
+});
+
+Route::get('/group/show', function () {
+    return view('group.show');
 });
