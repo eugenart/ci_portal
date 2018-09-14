@@ -13,27 +13,32 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST">
+                <form method="POST" action="{{ url('groups') }}">
+                    @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <input name="group_name" id="" class="form-control" placeholder="Название группы"></input>
+                            <input id="" name="name" class="form-control" placeholder="Название группы">
                         </div>
-
                         <div id="photo" class="form-group">
                             <img src="http://via.placeholder.com/185x185"
-                                 style="width:185px;height:185px;border:#41719C 2px solid;" id="photo_preview"
+                                 style="width:185px; height:185px; border:#41719C 2px solid;" id="photo_preview"
                                  class="img-thumbnail" alt="Фото группы">
                         </div>
                         <label class="custom-file hidden-print" style="">
-                            <input type="file" id="btnImagemPaciente" style="width: 160px;"
+                            <input type="file" name="avatar" id="btnImagemPaciente" style="width: 160px;"
                                    class="form-control form-control-sm">
                             <span class="custom-file-control"></span>
                         </label>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="value-array" name="brands" data-paraia-multi-select="true"
-                                   placeholder="Select a brand">
+                            <input type="text" name="users" class="form-control" data-paraia-multi-select="true"
+                                   placeholder="Добавить пользователей" id="value-array">
                         </div>
 
+                        <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+                            <option value="AL">Alabama</option>
+                            ...
+                            <option value="WY">Wyoming</option>
+                        </select>
 
                     </div>
                     <div class="modal-footer">

@@ -11,34 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.index');
-});
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/auth', function () {
     return view('auth.index');
 });
 
-Route::get('/user', function () {
-    return view('user.index');
-});
+Route::get('/users', 'UserController@index');
+Route::post('/users', 'UserController@add');
+Route::get('/users/json', 'UserController@users_json');
 
-Route::get('/mission', function () {
+Auth::routes();
+
+Route::get('/missions', function () {
     return view('mission.index');
 });
 
-Route::get('/user/show', function () {
-    return view('user.show');
-});
-
-Route::get('/group', function () {
-    return view('group.index');
-});
-
-Route::get('/group/show', function () {
-    return view('group.show');
-});
+Route::get('/groups', 'GroupController@index');
+Route::post('/groups', 'GroupController@add');

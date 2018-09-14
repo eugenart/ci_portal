@@ -8,6 +8,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+
+    public function groups_admin()
+    {
+        return $this->hasMany('App\Group', 'admin');
+    }
+
+    public function groups()
+    {
+        return $this->belongsToMany('App\Group')->withTimestamps();
+    }
+
     use Notifiable;
 
     /**
@@ -16,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'fio', 'position', 'login', 'vk', 'email', 'phone', 'birthday', 'password',
     ];
 
     /**

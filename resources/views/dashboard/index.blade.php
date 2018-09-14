@@ -1,5 +1,8 @@
 @extends('layout.index')
 @section('content')
+
+    {{ Auth::user() }}
+
     <div class="row">
         <div class="col">
             <div class="card">
