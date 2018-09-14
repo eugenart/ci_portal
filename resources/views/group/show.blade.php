@@ -1,5 +1,41 @@
 @extends('layout.index')
 @section('content')
+    <div class="modal fade" id="ModalCreateUser" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Создание поста</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="" onsubmit="">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input name="post_name" id="post_name" class="form-control" placeholder="Название поста"></input>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="comment" id="comment-user-mission" cols="30" rows="10" class="form-control"
+                                      placeholder="Комментарий"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Создать</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary create-user-button" data-toggle="modal" data-target="#ModalCreateUser">
+                Что у вас нового?
+            </button>
+        </div>
+    </div>
     <div class="row">
         <div class="col col-md-8 col-lg-8 col-xl-8 group-posts-wrapper row">
             <div class="posts-wrapper col col-md-12 col-lg-12 col-xl-12 row">
@@ -85,21 +121,19 @@
                                 <div class="card-body">
                                     <form action="">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Ваш комментарий"
+                                            <input type="text" class="form-control" placeholder="Ваш комментарий..."
                                                    aria-label="Ваш комментарий" aria-describedby="button-addon2">
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-secondary" type="button"
-                                                        id="button-addon2">Button
+                                                        id="button-addon2"><i class="far fa-paper-plane fa-1x"></i></i>
                                                 </button>
                                             </div>
                                         </div>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -107,4 +141,12 @@
             <h2>Тут инфа про группы</h2>
         </div>
     </div>
+@endsection
+@section('js')
+    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+    <script>
+        tinymce.init({
+            selector: '#comment-user-mission'
+        });
+    </script>
 @endsection

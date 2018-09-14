@@ -16,7 +16,7 @@
     }
 }
 
-.nav-item a{
+.nav-item a {
     color: white !important;
 }
 
@@ -555,8 +555,24 @@ marquee {
     background-color: rgba(4, 30, 66, 1);
 }
 
-.mb-3 input[type="text"]{
-    border: none;
+.mb-3 input[type="text"]:focus {
+    outline: none !important;
+    box-shadow: none;
+    border-color: rgba(4, 30, 66, 1);
+}
+
+.mb-3 input[type="text"]::-webkit-input-placeholder{
+    font-size: 12px;
+}
+
+.mb-3 button {
+    border: 1px solid rgba(4, 30, 66, 1);
+}
+
+.modal-footer .btn {
+    background-color: #041e42 !important;
+    border: 1px solid #041e42;
+    border-radius: 0;
 }
 
 @media(min-width: 992px) {

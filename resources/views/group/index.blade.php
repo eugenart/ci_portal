@@ -13,8 +13,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="" onsubmit="">
-                    @csrf
+                <form method="POST" action="#">
                     <div class="modal-body">
                         <div class="form-group">
                             <input name="group_name" id="" class="form-control" placeholder="Название группы"></input>
@@ -31,9 +30,8 @@
                             <span class="custom-file-control"></span>
                         </label>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="brands" data-paraia-multi-select="true"
+                            <input type="text" class="form-control" id="value-array" name="brands" data-paraia-multi-select="true"
                                    placeholder="Select a brand">
-
                         </div>
 
 
@@ -176,6 +174,9 @@
             // is case sensitive?
             case_sensitive: false
 
+        });
+        $(".item").click(function () {
+            $("#value-array").val(select.paraia_multi_select('get_items'))
         });
 
     </script>
