@@ -13,7 +13,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="#">
+                <form method="POST">
                     <div class="modal-body">
                         <div class="form-group">
                             <input name="group_name" id="" class="form-control" placeholder="Название группы"></input>
@@ -176,7 +176,10 @@
 
         });
         $(".item").click(function () {
-            $("#value-array").val(select.paraia_multi_select('get_items'))
+            let a = []
+            a.push(select.paraia_multi_select("get_items"));
+            $("#value-array").val("["+a[0]+"]")
+            console.log($("#value-array").val());
         });
 
     </script>
