@@ -1,5 +1,9 @@
 @extends('layout.index')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/paraia_multi_select.css') }}">
+@endsection
 @section('content')
+    <div class="bg"></div>
     <div class="modal fade" id="ModalCreateUser" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -14,7 +18,8 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <input name="post_name" id="post_name" class="form-control" placeholder="Название поста"></input>
+                            <input name="post_name" id="post_name" class="form-control"
+                                   placeholder="Название поста"></input>
                         </div>
                         <div class="form-group">
                             <textarea name="comment" id="comment-user-mission" cols="30" rows="10" class="form-control"
@@ -37,13 +42,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col col-md-8 col-lg-8 col-xl-8 group-posts-wrapper row">
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 group-posts-wrapper row">
             <div class="posts-wrapper col col-md-12 col-lg-12 col-xl-12 row">
-                <div class="post-author col col-md-2 col-lg-2 col-xl-2">
+                <div class="post-author col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
                     <img src="https://api.adorable.io/avatars/150/2"
                          alt="">
                 </div>
-                <div class="col col-md-10 col-lg-10 col-xl-10">
+                <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
                     <div class="post-body card">
 
                         <div class="card-header post-card-header">
@@ -137,8 +142,59 @@
                 </div>
             </div>
         </div>
-        <div class="col col-md-4 col-lg-4 col-xl-4 group-info-wrapper">
-            <h2>Тут инфа про группы</h2>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 group-info-wrapper">
+            <h6>Участники группы</h6>
+            <div class="row group-users">
+                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
+                    <img src="https://api.adorable.io/avatars/150/1" alt="">
+                    <p>Таисия</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
+                    <img src="https://api.adorable.io/avatars/150/2" alt="">
+                    <p>Таисия</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
+                    <img src="https://api.adorable.io/avatars/150/3" alt="">
+                    <p>Таисия</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
+                    <img src="https://api.adorable.io/avatars/150/4" alt="">
+                    <p>Таисия</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
+                    <img src="https://api.adorable.io/avatars/150/5" alt="">
+                    <p>Таисия</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 group-user adduser">
+                    <i class="fas fa-plus fa-2x" id="addUserhref"></i>
+                    <p id="addUsertext">Добавить</p>
+                    <div class="user-popup-select card">
+                        <form method="POST" action="{{ url('groups') }}">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input type="text" name="users" class="form-control" data-paraia-multi-select="true"
+                                           placeholder="Добавить пользователей" id="value-array">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Добавить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <h6>Участники онлайн</h6>
+            <div class="row group-users">
+                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
+                    <img src="https://api.adorable.io/avatars/150/7" alt="">
+                    <p>Таисия</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
+                    <img src="https://api.adorable.io/avatars/150/8" alt="">
+                    <p>Таисия</p>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
@@ -148,5 +204,48 @@
         tinymce.init({
             selector: '#comment-user-mission'
         });
+    </script>
+    <script src="{{ asset('js/paraia_multi_select.js')  }}"></script>
+    <script>
+        var items = [
+            {
+                value: 11,
+                text: "<img id='theImg' src='https://api.adorable.io/avatars/150/2' class='user-selector'/> Apple"
+            },
+            {
+                value: 12,
+                text: "<img id='theImg' src='https://api.adorable.io/avatars/150/1' class='user-selector'/> Nokia"
+            },
+            {value: 13, text: 'Sony'},
+            {value: 14, text: 'LG'},
+            {value: 15, text: 'HTC'},
+            {value: 16, text: 'Motorola'},
+            {value: 17, text: 'Samsung'},
+            {value: 18, text: 'ZTE'},
+            {value: 19, text: 'Asus'},
+            {value: 20, text: 'Alcatel'}
+        ];
+        var select = $('[data-paraia-multi-select="true"]').paraia_multi_select({
+            items: items,
+            // enable multi select
+            multi_select: true,
+            // selected items on init
+            defaults: [],
+            // filter text
+            filter_text: 'Filter',
+            // is Right To Left?
+            rtl: false,
+            // is case sensitive?
+            case_sensitive: false
+
+        });
+        $(".item").click(function () {
+            let a = []
+            a.push(select.paraia_multi_select("get_items"));
+            $("#value-array").val(a);
+            console.log($("#value-array").val());
+        });
+
+
     </script>
 @endsection

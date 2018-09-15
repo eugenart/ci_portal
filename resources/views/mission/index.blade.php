@@ -1,6 +1,7 @@
 @extends('layout.index')
 @section('css')
     <link rel="stylesheet" href="{{ asset("css/dataTables.bootstrap4.min.css") }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
 @endsection
 @section('content')
     <div class="modal fade" id="ModalCreateUser" tabindex="-1" role="dialog"
@@ -126,7 +127,7 @@
     <div class="row">
         <div class="col">
             <div class="card card-table-rendered">
-                <table id="table_id" class="table table-tasks table-rendered table-bordered">
+                <table id="table_id" class="table table-tasks table-rendered dt-responsive nowrap">
                     <thead>
                     <tr>
                         <th>№</th>
@@ -149,6 +150,10 @@
     <script src="{{ asset("js/jquery.dataTables.js") }}"></script>
     <script src="{{ asset("js/dataTables.bootstrap4.min.js") }}"></script>
     <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+
     <script>
         tinymce.init({
             selector: '#comment-user-mission'
@@ -209,5 +214,9 @@
                 {data: 'datefrom'},
                 {data: 'deadline'},
             ]
-        });</script>
+        });
+
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );</script>
 @endsection

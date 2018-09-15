@@ -32,3 +32,7 @@ Route::get('/missions', function () {
 
 Route::get('/groups', 'GroupController@index');
 Route::post('/groups', 'GroupController@add');
+
+Route::get('/groups/show', function () {
+    return view('group.show');
+});

@@ -21,7 +21,7 @@
                         </div>
                         <div id="photo" class="form-group">
                             <img src="http://via.placeholder.com/185x185"
-                                 style="width:185px; height:185px; border:#41719C 2px solid;" id="photo_preview"
+                                 style="" id="photo_preview"
                                  class="img-thumbnail" alt="Фото группы">
                         </div>
                         <label class="custom-file hidden-print" style="">
@@ -33,13 +33,6 @@
                             <input type="text" name="users" class="form-control" data-paraia-multi-select="true"
                                    placeholder="Добавить пользователей" id="value-array">
                         </div>
-
-                        <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
-                            <option value="AL">Alabama</option>
-                            ...
-                            <option value="WY">Wyoming</option>
-                        </select>
-
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Создать</button>
@@ -57,7 +50,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 col-lg-6 col-xl-6">
+        <div class="col-md-3 col-lg-3 col-xl-3">
             <div class="card account-profile-main">
                 <div class="row">
                     <div class="col account-main-info-col">
@@ -88,16 +81,12 @@
                             <a href=""><img class="group-user-avatar" src="https://api.adorable.io/avatars/150/5" alt=""
                                             data-container="body" data-toggle="popover" data-placement="top"
                                             data-content="Имя Пользователя" data-html="true" data-trigger="hover"></a>
-                            <a href=""><img class="group-user-avatar" src="https://api.adorable.io/avatars/150/6" alt=""
-                                            data-container="body" data-toggle="popover" data-placement="top"
-                                            data-content="Имя Пользователя" data-html="true" data-trigger="hover"></a>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-6 col-xl-6">
+        <div class="col-md-3 col-lg-3 col-xl-3">
             <div class="card account-profile-main">
                 <div class="row">
                     <div class="col account-main-info-col">
@@ -128,9 +117,6 @@
                             <a href=""><img class="group-user-avatar" src="https://api.adorable.io/avatars/150/5" alt=""
                                             data-container="body" data-toggle="popover" data-placement="top"
                                             data-content="Имя Пользователя" data-html="true" data-trigger="hover"></a>
-                            <a href=""><img class="group-user-avatar" src="https://api.adorable.io/avatars/150/6" alt=""
-                                            data-container="body" data-toggle="popover" data-placement="top"
-                                            data-content="Имя Пользователя" data-html="true" data-trigger="hover"></a>
                         </div>
                     </div>
                 </div>
@@ -155,8 +141,8 @@
     </script>
     <script>
         var items = [
-            {value: 11, text: 'Apple'},
-            {value: 12, text: 'Nokia'},
+            {value: 11, text: "<img id='theImg' src='https://api.adorable.io/avatars/150/2' class='user-selector'/> Apple"},
+            {value: 12, text: "<img id='theImg' src='https://api.adorable.io/avatars/150/1' class='user-selector'/> Nokia"},
             {value: 13, text: 'Sony'},
             {value: 14, text: 'LG'},
             {value: 15, text: 'HTC'},
@@ -183,9 +169,10 @@
         $(".item").click(function () {
             let a = []
             a.push(select.paraia_multi_select("get_items"));
-            $("#value-array").val("["+a[0]+"]")
+            $("#value-array").val(a);
             console.log($("#value-array").val());
         });
+
 
     </script>
 @endsection

@@ -50,7 +50,7 @@
 }
 
 .table-tasks tr {
-    text-align: center;
+
 }
 
 .table-tasks tbody {
@@ -342,8 +342,8 @@
 }
 
 .account-profile-avatar {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     display: block;
     margin: auto;
 }
@@ -363,7 +363,6 @@
 
 .account-profile-main_information li:first-child {
     font-size: 20px;
-    white-space: nowrap;
 }
 
 .account-main-btn {
@@ -397,6 +396,15 @@ marquee {
     cursor: pointer;
 }
 
+.group-user-avatar-layout {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
 .card-col {
     padding: 15px;
 }
@@ -414,7 +422,67 @@ marquee {
 }
 
 .group-info-wrapper {
-    background-color: yellow;
+}
+
+.group-user > img {
+    display: block;
+    margin: auto;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.group-user svg {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+}
+
+.item button {
+    margin: 0px;
+    vertical-align: top !important;
+}
+
+.items .item {
+    display: flex;
+    align-items: center;
+}
+
+.user-selector {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(4, 30, 66, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    display: none;
+}
+
+.adduser {
+    z-index: 6;
+}
+
+.user-popup-select {
+    width: 400px;
+    position: relative;
+    top: -50px;
+    left: -400px;
+    z-index: 5;
+    display: none;
+}
+
+.group-user > p {
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    width: 100%;
 }
 
 .post-body {
@@ -561,7 +629,7 @@ marquee {
     border-color: rgba(4, 30, 66, 1);
 }
 
-.mb-3 input[type="text"]::-webkit-input-placeholder{
+.mb-3 input[type="text"]::-webkit-input-placeholder {
     font-size: 12px;
 }
 

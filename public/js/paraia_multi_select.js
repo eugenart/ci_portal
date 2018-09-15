@@ -215,11 +215,10 @@ function deselectAll(id) {
                 var item = $(this);
 
                 if (item.prop('checked')) {
-                    items.push("'"+item.attr('id').split('-')[2]+"'");
+                    items.push(item.attr('id').split('-')[2]);
                 }
             });
-
-            return items;
+            return (items);
         }
     };
 
