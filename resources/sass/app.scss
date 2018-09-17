@@ -431,11 +431,13 @@ marquee {
     display: block;
     width: 40px;
     border-radius: 50%;
+    float: left;
 }
 
-.user-online{
+.user-online {
     width: 40px;
     height: 40px;
+    float: left;
 }
 
 .user-online::after {
@@ -448,9 +450,6 @@ marquee {
     padding: 0;
     width: 5px;
     height: 5px;
-
-
-
 }
 
 .group-user svg {
@@ -499,10 +498,19 @@ marquee {
     display: none;
 }
 
+.group-user {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
 .group-user > p {
     font-size: 14px;
     display: block;
-    width: 100%;
+    float: left;
+    vertical-align: bottom;
+    margin-bottom: 0;
+    padding-left: 15px;
 }
 
 .post-body {

@@ -133,12 +133,15 @@
             <div class="row group-users">
                 <div class="col-md-12 col-lg-12 col-xl-12 group-user delete-user">
                     <div class="user-online"><img src="https://api.adorable.io/avatars/150/1"></div>
-                    <p>Таисия</p>
+                    <p>Кулягина Таисия Ивановна</p>
+                </div>
+                <div class="col-md-12 col-lg-12 col-xl-12 group-user delete-user">
+                    <div><img src="https://api.adorable.io/avatars/150/1"></div>
+                    <p>Кулягина Таисия Ивановна</p>
                 </div>
 
                 <div class="col-md-12 col-lg-12 col-xl-12 group-user adduser">
                     <i class="fas fa-plus fa-2x" id="addUserhref"></i>
-                    <p id="addUsertext">Добавить</p>
                 </div>
             </div>
         </div>
