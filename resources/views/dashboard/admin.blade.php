@@ -3,6 +3,31 @@
     <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 admin-card">
             <div class="card admin-card-header">
+                <h4>События</h4>
+                <div class="card-body row">
+                    <div id="accordion2" class="col-md-6">
+                        <div class="building-header">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link">
+                                        Событие №1
+                                    </button>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <form action="" class="admin-form">
+                            <div class="form-group"><input name="ev-name" type="text" class="form-control"
+                                                           placeholder="Название события"></div>
+                            <div class="form-group"><input type="submit" class="form-control"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 admin-card">
+            <div class="card admin-card-header">
                 <h4>Здания</h4>
                 <div class="card-body row">
                     <div id="accordion1" class="col-md-6">

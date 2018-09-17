@@ -73,7 +73,7 @@
 
             <ul class="navbar-nav ml-md-auto d-md-flex">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-users-cog"></i> Админ-панель</a>
+                    <a class="nav-link" href="{{ url("admin") }}"><i class="fas fa-users-cog"></i> Админ-панель</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><img src="https://api.adorable.io/avatars/150/2" alt=""

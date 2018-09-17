@@ -332,7 +332,7 @@ marquee {
   height: 40px; }
 
 .item button {
-  margin: 0px;
+  margin: 0;
   vertical-align: top !important; }
 
 .items .item {
@@ -469,7 +469,7 @@ marquee {
   cursor: pointer; }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
   background-color: rgba(4, 30, 66, 0.1); }
 
 ::-webkit-scrollbar-track {
@@ -508,7 +508,7 @@ marquee {
   background-color: white !important; }
 
 .building-header {
-  padding: 0px; }
+  padding: 0; }
 
 .building-body > ul {
   list-style-type: none;
