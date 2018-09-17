@@ -18,16 +18,16 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <select class="custom-select" name="from">
-                                <option selected>Выберите источник</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select class="custom-select" name="client">
+                                <option selected disabled>Источник</option>
+                                <option value="1">Задача</option>
+                                <option value="2">Общежитие</option>
+                                <option value="3">Университет</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <select class="custom-select" name="client">
-                                <option selected>Выберите от кого</option>
+                                <option selected disabled>Клиент</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <select class="custom-select" name="place">
-                                <option selected>Выберите место</option>
+                                <option selected>Адрес</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="form-group">
                             <select class="custom-select" name="topic">
-                                <option selected>Выберите тему</option>
+                                <option selected disabled>Тема</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <select class="custom-select" name="worker">
-                                <option selected>Выберите кого</option>
+                                <option selected disabled>Исполнитель</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="form-group">
                             <select class="custom-select" name="help">
-                                <option selected>Выберите помощь</option>
+                                <option selected>Помощники</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="form-group">
                             <select class="custom-select" name="looking">
-                                <option selected>Выберите смотрящего</option>
+                                <option selected>Наблюдатели</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -87,10 +87,10 @@
                         </div>
                         <div class="form-group">
                             <select class="custom-select" name="priority">
-                                <option selected>Выберите приоритет</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option selected disabled>Приоритет</option>
+                                <option value="1">Высокий</option>
+                                <option value="2">Средний</option>
+                                <option value="3">Низкий</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -216,7 +216,7 @@
             ]
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#example').DataTable();
-        } );</script>
+        });</script>
 @endsection

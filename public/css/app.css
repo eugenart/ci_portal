@@ -257,7 +257,8 @@
   width: 150px;
   height: 150px;
   display: block;
-  margin: auto; }
+  margin: auto;
+  object-fit: cover; }
 
 .account-profile-main {
   padding: 20px;
@@ -494,6 +495,39 @@ marquee {
   background-color: #041e42 !important;
   border: 1px solid #041e42;
   border-radius: 0; }
+
+.admin-card {
+  padding: 5px; }
+
+#accordion1, #accordion2 {
+  height: 400px;
+  overflow-y: scroll; }
+
+#accordion1 .card-header, #accordion2 .card-header {
+  padding: 5px;
+  background-color: white !important; }
+
+.building-header {
+  padding: 0px; }
+
+.building-body > ul {
+  list-style-type: none;
+  text-align: left; }
+
+.building-header button {
+  color: #041e42; }
+
+.building-header button:focus, .building-header button:hover {
+  color: #041e42;
+  text-decoration: none; }
+
+.admin-card-header {
+  text-align: center;
+  color: #041e42; }
+
+.admin-form input[type="submit"] {
+  background-color: #041e42;
+  color: white; }
 
 @media (min-width: 992px) {
   .leftmenutrigger {

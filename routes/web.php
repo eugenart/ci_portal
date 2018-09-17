@@ -36,3 +36,7 @@ Route::post('/groups', 'GroupController@add');
 Route::get('/groups/show', function () {
     return view('group.show');
 });
+
+Route::get('/admin', function () {
+    return view('dashboard.admin');
+});
