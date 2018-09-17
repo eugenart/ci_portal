@@ -131,58 +131,34 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 group-info-wrapper">
             <h6>Участники группы</h6>
             <div class="row group-users">
-                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
-                    <img src="https://api.adorable.io/avatars/150/1" alt="">
+                <div class="col-md-12 col-lg-12 col-xl-12 group-user delete-user">
+                    <div class="user-online"><img src="https://api.adorable.io/avatars/150/1"></div>
                     <p>Таисия</p>
                 </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
-                    <img src="https://api.adorable.io/avatars/150/2" alt="">
-                    <p>Таисия</p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
-                    <img src="https://api.adorable.io/avatars/150/3" alt="">
-                    <p>Таисия</p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
-                    <img src="https://api.adorable.io/avatars/150/4" alt="">
-                    <p>Таисия</p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
-                    <img src="https://api.adorable.io/avatars/150/5" alt="">
-                    <p>Таисия</p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 group-user adduser">
+
+                <div class="col-md-12 col-lg-12 col-xl-12 group-user adduser">
                     <i class="fas fa-plus fa-2x" id="addUserhref"></i>
                     <p id="addUsertext">Добавить</p>
-                    <div class="user-popup-select card">
-                        <form method="POST" action="{{ url('groups') }}">
-                            @csrf
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <input type="text" name="users" class="form-control" data-paraia-multi-select="true"
-                                           placeholder="Добавить пользователей" id="value-array">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Добавить</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <h6>Участники онлайн</h6>
-            <div class="row group-users">
-                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
-                    <img src="https://api.adorable.io/avatars/150/7" alt="">
-                    <p>Таисия</p>
-                </div>
-                <div class="col-md-2 col-lg-2 col-xl-2 group-user">
-                    <img src="https://api.adorable.io/avatars/150/8" alt="">
-                    <p>Таисия</p>
                 </div>
             </div>
         </div>
     </div>
+    <div class="user-popup-select card">
+        <form method="POST" action="{{ url('groups') }}">
+            @csrf
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" name="users" class="form-control" data-paraia-multi-select="true"
+                           placeholder="Добавить пользователей" id="value-array">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Добавить</button>
+                <button type="button" id="closeFormUser" class="btn btn-primary">Закрыть</button>
+            </div>
+        </form>
+    </div>
+    <a class="delete-a" href="">Удалить пользователя Имя</a>
 @endsection
 @section('js')
     <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
@@ -196,11 +172,11 @@
         var items = [
             {
                 value: 11,
-                text: "<img id='theImg' src='https://api.adorable.io/avatars/150/2' class='user-selector'/> Apple"
+                text: "<img src='https://api.adorable.io/avatars/150/2' class='user-selector'/> Apple"
             },
             {
                 value: 12,
-                text: "<img id='theImg' src='https://api.adorable.io/avatars/150/1' class='user-selector'/> Nokia"
+                text: "<img src='https://api.adorable.io/avatars/150/1' class='user-selector'/> Nokia"
             },
             {value: 13, text: 'Sony'},
             {value: 14, text: 'LG'},
@@ -230,7 +206,33 @@
             a.push(select.paraia_multi_select("get_items"));
             $("#value-array").val(a);
         });
+    </script>
+    <script>
+        $(".delete-user").contextmenu(function (e) {
+            e.preventDefault();
+            $(".delete-a").css("left", e.pageX);
+            $(".delete-a").css("top", e.pageY);
+            $(".delete-a").show();
+            console.log(e.pageX);
 
-
+        });
+        $(document).click(function (e) {
+            if (!$(".delete-a").is(e.target)) {
+                $(".delete-a").hide();
+            }
+        })
+    </script>
+    <script>
+        $(".adduser").click(function (e) {
+            $(".user-popup-select").css("left", e.pageX);
+            $(".user-popup-select").css("top", e.pageY);
+            $(".user-popup-select").show();
+            console.log(e.pageX);
+        });
+    </script>
+    <script>
+        $("#closeFormUser").click(function (e) {
+            $(".user-popup-select").hide();
+        })
     </script>
 @endsection

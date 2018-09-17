@@ -427,17 +427,35 @@ marquee {
 .group-info-wrapper {
 }
 
-.group-user > img {
+.group-user > div > img {
     display: block;
-    margin: auto;
     width: 40px;
     border-radius: 50%;
+}
+
+.user-online{
+    width: 40px;
+    height: 40px;
+}
+
+.user-online::after {
+    content: '\2022';
+    position: relative;
+    bottom: 40px;
+    right: -25px;
+    color: #007fff;
+    font-size: 50px;
+    padding: 0;
+    width: 5px;
+    height: 5px;
+
+
+
 }
 
 .group-user svg {
     cursor: pointer;
     display: block;
-    margin: auto;
     width: 40px;
     height: 40px;
 }
@@ -474,15 +492,14 @@ marquee {
 
 .user-popup-select {
     width: 400px;
-    position: relative;
-    top: -50px;
-    left: -400px;
-    z-index: 5;
+    position: absolute;
+    top: -0;
+    left: 0;
+    z-index: 1000;
     display: none;
 }
 
 .group-user > p {
-    text-align: center;
     font-size: 14px;
     display: block;
     width: 100%;
@@ -508,7 +525,7 @@ marquee {
 }
 
 .comment-delete {
-    padding: 0px !important;
+    padding: 0 !important;
 }
 
 .post-delete a {
@@ -758,6 +775,23 @@ marquee {
 .text-404 a:hover {
     transform: scale(1.2);
     transition: all 0.5s ease-in-out;
+}
+
+a.delete-a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    text-decoration: none;
+    color: #041e42;
+    display: block;
+    background-color: white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 5px;
+}
+
+a.delete-a:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);;
 }
 
 @media(min-width: 992px) {

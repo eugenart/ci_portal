@@ -15,23 +15,6 @@ $(document).ready(function () {
         });
     });
     //.user-popup-select
-    $("#addUserhref").click(function () {
-        $(".bg").slideToggle("slow", function () {
-            $(".user-popup-select").slideToggle("slow", function () {});
-            if ($(".bg").css("display") == "block") {
-                $(".adduser").css("color", "white");
-                $("#addUserhref").html("<i class=\'fas fa-times\' id='addUserhref'></i>");
-                $("#addUsertext").html("Закрыть");
-            }
-            else {
-                $(".adduser").css("color", "black");
-                $("#addUserhref").html("<i class=\'fas fa-plus fa-2x\' id=\'addUserhref\'></i>");
-                $("#addUsertext").html("Добавить");
-            }
-        });
-
-
-    });
 
 });
 
