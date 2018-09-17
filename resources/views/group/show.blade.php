@@ -56,6 +56,8 @@
                                 <p class="post-title">Special title treatment</p>
                                 <p class="post-time-info">Posted at 20:04</p>
                             </div>
+                            <div class="post-main-info post-delete col-md-4 col-lg-4 col-xl-4"><p><a
+                                        href="">&#10006;</a></p></div>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
@@ -82,27 +84,11 @@
                             <div
                                 class="post-body post-body-comment card col-md-10 col-lg-10 col-xl-10 comment-card-right">
                                 <div class="card-body">
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Delectus
-                                        distinctio
-                                        dolor eaque earum eligendi enim facere illo labore laborum porro quam qui quia
-                                        quibusdam,
-                                        quos
-                                        ratione rem, sapiente sit, vitae?</p>
-                                    <div class="post-footer"><p class="post-time-info">Posted at 20:04</p><span
-                                            class="post-comment-author">Кулягина Таисия</span>
+                                    <div class="post-main-info comment-delete col-md-12 col-lg-12 col-xl-12">
+                                        <p>
+                                            <a class="black-a" href="">&#10006;</a>
+                                        </p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment-rendered row col-md-12 col-lg-12 col-xl-12">
-                            <div class="post-author comment-img-left col col-md-2 col-lg-2 col-xl-2">
-                                <img src="https://api.adorable.io/avatars/150/1"
-                                     alt="">
-                            </div>
-                            <div
-                                class="post-body post-body-comment card col-md-10 col-lg-10 col-xl-10 comment-card-right">
-                                <div class="card-body">
                                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                         Delectus
                                         distinctio
@@ -225,7 +211,7 @@
             {value: 19, text: 'Asus'},
             {value: 20, text: 'Alcatel'}
         ];
-        var select = $('[data-paraia-multi-select="true"]').paraia_multi_select({
+        let select = $('[data-paraia-multi-select="true"]').paraia_multi_select({
             items: items,
             // enable multi select
             multi_select: true,
@@ -240,10 +226,9 @@
 
         });
         $(".item").click(function () {
-            let a = []
+            let a = [];
             a.push(select.paraia_multi_select("get_items"));
             $("#value-array").val(a);
-            console.log($("#value-array").val());
         });
 
 
