@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css">
 @endsection
 @section('content')
-    <div class="modal fade" id="ModalCreateUser" tabindex="-1" role="dialog"
+    <div class="modal fade bd-example-modal-lg" id="ModalCreateUser" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Создание заявки</h5>
@@ -99,7 +99,7 @@
                                    onfocus="(this.type='date')" name="date_end" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="comment" id="comment-user-mission" cols="30" rows="20" class="form-control"
+                            <textarea name="comment" id="comment-user-mission" cols="30" rows="10" class="form-control"
                                       placeholder="Комментарий"></textarea>
                         </div>
                         <div class="form-group">
