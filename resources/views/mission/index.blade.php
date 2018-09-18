@@ -99,7 +99,7 @@
                                    onfocus="(this.type='date')" name="date_end" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="comment" id="comment-user-mission" cols="30" rows="10" class="form-control"
+                            <textarea name="comment" id="comment-user-mission" cols="30" rows="20" class="form-control"
                                       placeholder="Комментарий"></textarea>
                         </div>
                         <div class="form-group">
@@ -213,7 +213,8 @@
     </script>
     <script>
         tinymce.init({
-            selector: '#comment-user-mission'
+            selector: '#comment-user-mission',
+            plugins : 'table',
         });
     </script>
     <script>
