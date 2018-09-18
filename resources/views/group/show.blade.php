@@ -116,7 +116,7 @@
                                                    aria-label="Ваш комментарий" aria-describedby="button-addon2">
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-secondary" type="button"
-                                                        id="button-addon2"><i class="far fa-paper-plane fa-1x"></i></i>
+                                                        id="button-addon2"><i class="far fa-paper-plane fa-1x"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -172,7 +172,7 @@
     </script>
     <script src="{{ asset('js/paraia_multi_select.js')  }}"></script>
     <script>
-        var items = [
+        const items = [
             {
                 value: 11,
                 text: "<img src='https://api.adorable.io/avatars/150/2' class='user-selector'/> Apple"

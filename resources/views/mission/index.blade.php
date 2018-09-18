@@ -18,20 +18,17 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <select class="custom-select" name="client">
+                            <select class="custom-select" name="source">
                                 <option selected disabled>Источник</option>
                                 <option value="1">Задача</option>
                                 <option value="2">Общежитие</option>
                                 <option value="3">Университет</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <select class="custom-select" name="client">
-                                <option selected disabled>Клиент</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
+                        <div class="form-group live-form-group">
+                            <input class="form-control" type="text" name="live-search" id="live-search">
+                            <div class="dropdown-search form-control">
+                            </div>
                         </div>
                         {{--TODO: make users info popup--}}
                         <div class="user-info-popup">
@@ -154,6 +151,66 @@
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            dropDown = $(".dropdown-search");
+            selectId = 0;
+            let items = [
+                {value: 1, text: 'Sony'},
+                {value: 2, text: 'LG'},
+                {value: 3, text: 'Apple'},
+                {value: 4, text: 'One Plus'},
+                {value: 5, text: 'Android'},
+                {value: 6, text: 'Iphone'}
+
+            ];
+            items.forEach(function (item) {
+                selectId++;
+                (dropDown).append(
+                    '<div class="item">' +
+                    '   <div class="live-checkbox">' +
+                    '       <span class="live-label form-control" onclick="GetValue(id)" ' + 'id=live-' + selectId + '>' + item['text'] + '</span>' +
+                    '   </div>' +
+                    '</div>'
+                );
+            });
+        });
+
+        function GetValue(id) {
+            $("#live-search").val($("#" + id).text());
+            if ($("#live-search").val() != "") {
+                $(".user-info-popup").show();
+            }
+        }
+
+        $("select[name=source]").change(function () {
+            switch ($(this).val()) {
+                case "1":
+                    $(".live-form-group, .user-info-popup").hide();
+                    break;
+                case "2":
+                    $(".live-form-group").show();
+                    break;
+            }
+        });
+
+        $('input[name=live-search]').on('keyup focus', function () {
+            let filter = $(this);
+            let text = filter.val();
+            console.log(text);
+            dropDown = $(".dropdown-search");
+            dropDown.find('.item').each(function () {
+                var item = $(this);
+                console.log(item.html().includes(text));
+                if (item.html().includes(text)) {
+                    item.show();
+                } else {
+                    item.hide();
+                }
+            });
+        });
+
+    </script>
     <script>
         tinymce.init({
             selector: '#comment-user-mission'

@@ -802,6 +802,37 @@ a.delete-a:hover {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);;
 }
 
+.form-group input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.dropdown-search {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.live-form-group, .user-info-popup {
+    display: none;
+}
+
+.user-info-popup {
+    padding: 10px;
+    background-color: rgba(4, 30, 66, 0.1);
+    margin-bottom: 5px;
+}
+
+.user-info-popup .form-group:last-child{
+    margin-bottom: 0px;
+}
+
+.live-checkbox {
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 @media(min-width: 992px) {
     .leftmenutrigger {
         display: block;
