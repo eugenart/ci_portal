@@ -18,17 +18,20 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <select class="custom-select" name="source">
+                            <select class="custom-select" name="client">
                                 <option selected disabled>Источник</option>
                                 <option value="1">Задача</option>
                                 <option value="2">Общежитие</option>
                                 <option value="3">Университет</option>
                             </select>
                         </div>
-                        <div class="form-group live-form-group">
-                            <input class="form-control" type="text" name="live-search" id="live-search">
-                            <div class="dropdown-search form-control">
-                            </div>
+                        <div class="form-group">
+                            <select class="custom-select" name="client">
+                                <option selected disabled>Клиент</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
                         </div>
                         {{--TODO: make users info popup--}}
                         <div class="user-info-popup">
@@ -243,7 +246,7 @@
                 }
             },
             "ajax": {
-                "url": "http://ci/public/test.json",
+                "url": "/test.json",
                 "dataSrc": "data"
             },
             "createdRow": function (row, data, dataIndex) {

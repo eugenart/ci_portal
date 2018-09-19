@@ -10,7 +10,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="{{ url('users') }}">
+                <form method="POST" action="{{ url('users') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
@@ -82,7 +82,7 @@
                 <div class="card account-profile-main">
                     <div class="row">
                         <div class="col account-main-info-col">
-                            <img src="https://api.adorable.io/avatars/150/2" class="account-profile-avatar"
+                            <img src="{{ asset("images/avatars/users/$user->avatar") }}" class="account-profile-avatar"
                                  alt="">
                         </div>
                         <div class="col">
@@ -116,7 +116,7 @@
     <script>
         $("#photo").click(function () {
             $("#btnImagemPaciente").trigger('click');
-        })
+        });
 
 
         $('#btnImagemPaciente').change(function () {
