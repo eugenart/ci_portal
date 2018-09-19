@@ -18,7 +18,7 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <select class="custom-select" name="client">
+                            <select class="custom-select" name="source">
                                 <option selected disabled>Источник</option>
                                 <option value="1">Задача</option>
                                 <option value="2">Общежитие</option>
@@ -32,6 +32,11 @@
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
+                        </div>
+                        <div class="form-group live-form-group">
+                            <input class="form-control" type="text" name="live-search" id="live-search">
+                            <div class="dropdown-search form-control">
+                            </div>
                         </div>
                         {{--TODO: make users info popup--}}
                         <div class="user-info-popup">
@@ -187,11 +192,15 @@
         }
 
         $("select[name=source]").change(function () {
+            console.log($(this).val());
             switch ($(this).val()) {
                 case "1":
                     $(".live-form-group, .user-info-popup").hide();
                     break;
                 case "2":
+                    $(".live-form-group").show();
+                    break;
+                case "3":
                     $(".live-form-group").show();
                     break;
             }
@@ -217,7 +226,7 @@
     <script>
         tinymce.init({
             selector: '#comment-user-mission',
-            plugins : 'table',
+            plugins: 'table',
         });
     </script>
     <script>

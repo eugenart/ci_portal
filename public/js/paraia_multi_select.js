@@ -218,7 +218,8 @@ function deselectAll(id) {
                     items.push(item.attr('id').split('-')[2]);
                 }
             });
-            return (items);
+
+            return items;
         }
     };
 
